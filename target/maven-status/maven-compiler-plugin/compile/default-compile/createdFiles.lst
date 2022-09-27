@@ -6,6 +6,7 @@ madstodolist/controller/exception/TareaNotFoundException.class
 madstodolist/service/TareaServiceException.class
 madstodolist/controller/RegistroData.class
 madstodolist/model/UsuarioRepository.class
+madstodolist/controller/HomeController.class
 madstodolist/controller/exception/UsuarioNoLogeadoException.class
 madstodolist/model/TareaRepository.class
 madstodolist/controller/LoginController.class
