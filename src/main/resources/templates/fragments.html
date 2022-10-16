@@ -13,4 +13,32 @@
     <script th:src="@{/js/bootstrap.min.js}"></script>
 </div>
 
+<div th:fragment="header">
+    <nav class="nav">
+        <a href="/about">ToDoList <span class="sr-only">(current)</span></a>
+        <div class="nav">
+                <td th:text="${username}"></td>
+                <a  href="/modificarPerfil"> Cuenta </a>
+                <a href="/logout"> Cerrar sesión <td th:text="${username}"></td></a>
+        </div>
+        <div id="nav">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a th:href="@{/usuarios/{id}/tareas(id=${userid})}"> Tareas </a>
+                </li>
+                <li th:if="${esAdmin}">
+                    <a th:href="@{/usuarios}"> Usuarios </a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/equipos}"> Equipos </a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/usuarios/{id}/equipos(id=${userid})}"> Mis Equipos </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+
 </html>

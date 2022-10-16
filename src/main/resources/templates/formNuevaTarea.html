@@ -11,12 +11,12 @@
     <form method="post" th:action="@{/usuarios/{id}/tareas/nueva(id=${usuario.id})}" th:object="${tareaData}">
         <div class="col">
         <div class="form-group">
-            <label for="titulo">Título para tarea:</label>
-            <input  id="titulo" name="titulo" required th:field="*{titulo}" type="text"/>
+            <label for="titulotarea">Título para tarea:</label>
+            <input  id="titulotarea" name="titulo" required th:field="*{titulotarea}" type="text"/>
         </div>
 
-        <button type="submit">Crear tarea</button>
-        <a th:href="@{/usuarios/{id}/tareas(id=${usuario.id})}">Cancelar</a>
+        <button type="submit"> Crear tarea </button>
+        <a th:href="@{/usuarios/{id}/tareas(id=${usuario.id})}"> Cancelar </a>
         </div>
     </form>
 </div>
