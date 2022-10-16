@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head th:replace="Modificar cuenta"></head>
+<header th:replace="fragments :: header (esAdmin=${user.getAdministrador()} ,username=${user.nombre}, userid=${user.id})"> </header>
+
+<body>
+<div class="container">
+
+  <div class="row justify-content-center mb-3 mt-3">
+    <div class="col">
+      <h1>Los datos van a ser modificados</h1>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+      <form method="post" th:action="@{/modificarPerfil}" th:object="${modificaData}">
+        <div class="row justify-content-center">
+
+          <div class="col">
+            <div class="form-group">
+              <label for="nombre"> Nombre </label>
+              <input id="nombre" class="form-control" name="nombre" type="text"
+                     th:field="*{nombre}" required/>
+            </div>
+
+            <div class="form-group">
+              <label for = "password"> Contraseña Actual </label>
+              <input id = "actualpassword" name="password" placeholder="Contraseña Actual"
+                     type="password" th:field="*{actualpassword}" required/>
+            </div>
+            <div class="form-group">
+              <label for="password"> Nueva Contraseña </label>
+              <input id="password" name="password" placeholder="Nueva contraseña"
+                     type="password" th:field="*{password}" required/>
+            </div>
+
+            <div class="form-group">
+              <label for="password"> Repetir la nueva Contraseña </label>
+              <input id="password2" name="password" placeholder="Repetir contraseña"
+                     type="password" th:field="*{password2}" required/>
+            </div>
+
+            <div class="form-group">
+              <label for="fechaNacimiento"> Fecha de nacimiento </label>
+              <input id="fechaNacimiento" type="date" th:field="*{fechaNacimiento}"/>
+            </div>
+
+            <button type="submit" > Modificar </button>
+
+          </div>
+        </div>
+      </form>
+  </div>
+
+  <!-- modificar datos-->
+
+  <div class="row">
+    <div class="col-9">
+      <div th:object="${modificaData}">
+        <!-- modificar datos si hay errores -->
+        <ul th:if="${#fields.hasErrors('*')}">
+          <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+        </ul>
+
+      </div>
+      <ul th:if="${error != null}">
+        <li th:text="${error}"></li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

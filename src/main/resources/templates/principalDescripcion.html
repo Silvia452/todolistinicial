@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments :: head (titulo=${usuario.getNombre()})"></head>
+
+<body>
+
+<header th:replace="fragments:: header (esAdmin=${usuarioSesion.getAdministrador()} ,username=${usuarioSesion.nombre}, userid=${usuarioSesion.id})"> </header>
+<div class="container-fluid">
+      <h1 class="card-header text-center" th:text="${usuario.getNombre()}"></h1>
+
+        <div class="card">
+
+          <div class="list-group-item">
+            <p> Id </p>
+          </div>
+
+          <div class="list-group-item">
+            <p> Nombre </p>
+          </div>
+
+          <div class="list-group-item">
+            <p> Email </p>
+          </div>
+
+          <div class="list-group-item">
+            <p> Fecha de nacimiento </p>
+          </div>
+
+
+        </div>
+        <div class="card">
+          <div class="list-group-item">
+            <p class="font-weight-bold" th:text="${usuario.id}"></p>
+          </div>
+          <div class="list-group-item">
+            <p class="font-weight-bold" th:text="${usuario.nombre}"></p>
+          </div>
+          <div class="list-group-item">
+            <p class="font-weight-bold" th:text="${usuario.email}"></p>
+          </div>
+          <div class="list-group-item">
+            <p class="font-weight-bold" th:text="${usuario.fechaNacimiento}"></p>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="volver()"/> Volver </a>
+    </div>
+  </div>
+
+</div>
+
+
+</body>
+</html>
