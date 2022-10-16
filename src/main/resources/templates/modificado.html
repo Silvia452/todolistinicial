@@ -6,21 +6,21 @@
 
 
 
-<head th:replace="Modificar cuenta"></head>
+<head th:replace="Modificar la cuenta"></head>
 <header th:replace="fragments :: header (esAdmin=${user.getAdministrador()} ,username=${user.nombre}, userid=${user.id})"> </header>
 
 <body>
 <div class="container">
 
-  <div class="row justify-content-center mb-3 mt-3">
+  <div class="row ">
     <div class="col">
-      <h1>Los datos van a ser modificados</h1>
+      <h1>Los siguientes datos van a ser modificados</h1>
     </div>
   </div>
 
-  <div class="row justify-content-center">
+  <div class="row j">
       <form method="post" th:action="@{/modificarPerfil}" th:object="${modificaData}">
-        <div class="row justify-content-center">
+        <div class="row ">
 
           <div class="col">
             <div class="form-group">
@@ -61,7 +61,7 @@
   <!-- modificar datos-->
 
   <div class="row">
-    <div class="col-9">
+    <div class="col">
       <div th:object="${modificaData}">
         <!-- modificar datos si hay errores -->
         <ul th:if="${#fields.hasErrors('*')}">

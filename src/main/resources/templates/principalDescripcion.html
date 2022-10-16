@@ -6,41 +6,43 @@
 <body>
 
 <header th:replace="fragments:: header (esAdmin=${usuarioSesion.getAdministrador()} ,username=${usuarioSesion.nombre}, userid=${usuarioSesion.id})"> </header>
-<div class="container-fluid">
-      <h1 class="card-header text-center" th:text="${usuario.getNombre()}"></h1>
+<div class="container">
+      <h1 th:text="${usuario.getNombre()}"></h1>
 
         <div class="card">
 
-          <div class="list-group-item">
+          <div class="list id">
             <p> Id </p>
           </div>
 
-          <div class="list-group-item">
+          <div class="list nombre">
             <p> Nombre </p>
           </div>
 
-          <div class="list-group-item">
+          <div class="list email">
             <p> Email </p>
           </div>
 
-          <div class="list-group-item">
+          <div class="list nacimiento">
             <p> Fecha de nacimiento </p>
           </div>
 
 
         </div>
+
+
         <div class="card">
-          <div class="list-group-item">
-            <p class="font-weight-bold" th:text="${usuario.id}"></p>
+          <div class="list id">
+            <p  th:text="${usuario.id}"></p>
           </div>
-          <div class="list-group-item">
-            <p class="font-weight-bold" th:text="${usuario.nombre}"></p>
+          <div class="list nombre">
+            <p  th:text="${usuario.nombre}"></p>
           </div>
-          <div class="list-group-item">
-            <p class="font-weight-bold" th:text="${usuario.email}"></p>
+          <div class="list email">
+            <p  th:text="${usuario.email}"></p>
           </div>
-          <div class="list-group-item">
-            <p class="font-weight-bold" th:text="${usuario.fechaNacimiento}"></p>
+          <div class="list nacimiento">
+            <p  th:text="${usuario.fechaNacimiento}"></p>
           </div>
         </div>
       </div>

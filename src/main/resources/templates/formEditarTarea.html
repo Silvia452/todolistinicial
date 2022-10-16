@@ -12,10 +12,10 @@
         <div class="col-6">
         <div class="form-group">
             <label for="titulo">Título de la tarea:</label>
-            <input class="form-control" id="titulo" name="titulo" required th:field="*{titulo}" type="text"/>
+            <input class="form" id="titulo" name="titulo" required th:field="*{titulo}" type="text"/>
         </div>
-        <button class="btn btn-primary" type="submit">Modificar tarea</button>
-        <a class="btn btn-link" th:href="@{/usuarios/{id}/tareas(id=${tarea.usuario.id})}">Cancelar</a>
+        <button type="submit">Modificar tarea</button>
+        <a th:href="@{/usuarios/{id}/tareas(id=${tarea.usuario.id})}">Cancelar</a>
         </div>
     </form>
 </div>
