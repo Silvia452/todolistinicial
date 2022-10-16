@@ -4,11 +4,11 @@
 <head th:replace="fragments :: head (titulo='Login')"></head>
 
 <body>
-<div class="container-fluid">
-                <h2>To Do List</h2>
+<div class="container">
+                <h2>ToDoList</h2>
             </div>
 
-            <div class="mx-3">
+            <div class="container">
 
                 <form method="post" th:action="@{/login}" th:object="${loginData}">
                         <label for="eMail"> Usuario </label>
@@ -21,8 +21,8 @@
 
 
                         <button type="submit">Login</button>
-                        <a class="btn btn-link d-block" href="/registro"> Ir a registro </a>
-                        <a class="btn btn-link d-block" href="/about"> Acerca de </a>
+                        <a href="/registro"> Ir a registro </a>
+                        <a href="/about"> Acerca de </a>
 
                 </form>
             </div>
