@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments :: head (titulo='Crear un Nuevo Equipo')"></head>
+
+<body>
+<header th:replace="fragments :: header (esAdmin=${usuario.getAdministrador()} ,username=${usuario.nombre}, userid=${usuario.id})"> </header>
+
+<div class="container">
+
+    <h2 th:text="'Crear un nuevo equipo'"></h2>
+
+    <form method="post" th:action="@{/equipos/crear}" th:object="${equipoData}">
+        <div class="col">
+
+                <label for="nombreequipo">Nombre del equipo:</label>
+                <input id="nombreequipo" name="titulo" required th:field="*{nombreequipo}" type="text"/>
+                <label for="descripcion">Descripción:</label>
+
+                <textarea maxlength="255" class="form-control" id="descripcion" name="descripcion" th:field="*{descripcion}" type="textarea"/>
+            <button type="submit">Crear equipo</button>
+        </div>
+    </form>
+</div>
+
+<div th:replace="fragments::javascript"/>
+
+</body>
+</html>
