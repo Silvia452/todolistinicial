@@ -4,5 +4,5 @@ INSERT INTO tareas (id, titulo, usuario_id) VALUES('1', 'Lavar coche', '1');
 INSERT INTO tareas (id, titulo, usuario_id) VALUES('2', 'Renovar DNI', '1');
 
 INSERT INTO equipos (nombre, lider) VALUES('Trabajo P2', '1');
-INSERT INTO equipo_usuario (equipo_g, usuario_g) VALUES('1', '1');
+INSERT INTO equipo_usuario (fk_equipo, fk_usuario) VALUES('1', '1');
 INSERT INTO equipos (nombre) VALUES('Trabajo 2');
